@@ -133,6 +133,8 @@ typedef NS_ENUM(NSInteger, SDCAlertViewStyle) {
 
 - (UITextField *)textFieldAtIndex:(NSInteger)textFieldIndex;
 
+- (void) notifyContentChanged; // RH-SPECIFIC: Added notifyContentChanged
+
 @end
 
 @interface SDCAlertView (SDCAlertViewSpecific)

@@ -37,6 +37,7 @@
 		FD562648194D41790090236F /* NSValue+PlatformIndependence.m in Sources */ = {isa = PBXBuildFile; fileRef = FD562646194D41790090236F /* NSValue+PlatformIndependence.m */; };
 		FD56264D194D43210090236F /* SDCAutoLayoutLICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FD56264A194D43210090236F /* SDCAutoLayoutLICENSE */; };
 		FD56264E194D43210090236F /* UIView+SDCAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56264C194D43210090236F /* UIView+SDCAutoLayout.m */; };
+		FD562651194D44710090236F /* RHListSelectionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FD562650194D44710090236F /* RHListSelectionDialog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		FD56264A194D43210090236F /* SDCAutoLayoutLICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SDCAutoLayoutLICENSE; sourceTree = "<group>"; };
 		FD56264B194D43210090236F /* UIView+SDCAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDCAutoLayout.h"; sourceTree = "<group>"; };
 		FD56264C194D43210090236F /* UIView+SDCAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDCAutoLayout.m"; sourceTree = "<group>"; };
+		FD56264F194D44710090236F /* RHListSelectionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHListSelectionDialog.h; sourceTree = "<group>"; };
+		FD562650194D44710090236F /* RHListSelectionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHListSelectionDialog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				FD5625F9194D3F090090236F /* RHViewController.m */,
 				FD5625FB194D3F090090236F /* Images.xcassets */,
 				FD5625EA194D3F090090236F /* Supporting Files */,
+				FD56264F194D44710090236F /* RHListSelectionDialog.h */,
+				FD562650194D44710090236F /* RHListSelectionDialog.m */,
 			);
 			path = BLEBasics;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				FD56262A194D3FC70090236F /* SDCAlertViewBackgroundView.m in Sources */,
 				FD56262D194D3FC70090236F /* SDCAlertViewCoordinator.m in Sources */,
 				FD562629194D3FC70090236F /* SDCAlertView.m in Sources */,
+				FD562651194D44710090236F /* RHListSelectionDialog.m in Sources */,
 				FD5625FA194D3F090090236F /* RHViewController.m in Sources */,
 				FD562642194D41670090236F /* UIColor+PlatformIndependence.m in Sources */,
 				FD56263B194D41340090236F /* RBBBlockBasedArray.m in Sources */,

@@ -396,6 +396,11 @@ static NSInteger const SDCAlertViewDefaultFirstButtonIndex = 0;
 	return textFields;
 }
 
+// RH-SPECIFIC: Added notifyContentChanged
+- (void) notifyContentChanged {
+    [self.suggestedButtonTableView reloadData];
+}
+
 #pragma mark - First Responder
 
 - (BOOL)becomeFirstResponder {

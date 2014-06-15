@@ -329,6 +329,12 @@ static UIOffset const SDCAlertViewParallaxSlideMagnitude = {15.75, 15.75};
 	return self.alertContentView.textFields[textFieldIndex];
 }
 
+// RH-SPECIFIC: Added notifyContentChanged
+- (void) notifyContentChanged {
+    [self.alertContentView notifyContentChanged];
+    [self updateFirstButtonEnabledStatus];
+}
+
 #pragma mark - Layout
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {

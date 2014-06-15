@@ -46,6 +46,8 @@
 - (NSInteger)addButtonWithTitle:(NSString *)buttonTitle;
 - (NSString *)buttonTitleAtIndex:(NSInteger)buttonIndex;
 
+- (void) notifyContentChanged;  // RH-SPECIFIC: Added notifyContentChanged
+
 /*
  * Appearance properties
  */
