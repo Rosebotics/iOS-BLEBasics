@@ -13,7 +13,7 @@
 - (id) initWithTitle:(NSString*) title
 allowMultipleSelections:(BOOL) allowMultipleSelections
 dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
-           listItems:(NSArray*) listItems
+           listItems:(NSMutableArray*) listItems
           okCallback:(void(^)(NSArray* selectedIndexes)) okCallback;
 
 @end

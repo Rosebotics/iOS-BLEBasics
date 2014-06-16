@@ -17,7 +17,8 @@
 
 
 @interface RHListSelectionDialog()
-@property (nonatomic, strong) NSArray* listItems;
+@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) NSMutableArray* listItems;
 @property (nonatomic) BOOL allowMultipleSelections;
 @property (nonatomic) BOOL dismissOnFirstSelection;
 @property (nonatomic, strong) NSMutableArray* selectedIndexPaths;
@@ -29,7 +30,7 @@
 - (id) initWithTitle:(NSString*) title
 allowMultipleSelections:(BOOL) allowMultipleSelections
 dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
-           listItems:(NSArray*) listItems
+           listItems:(NSMutableArray*) listItems
           okCallback:(void(^)(NSArray* selectedIndexes)) okCallback {
     self = [super initWithTitle:title
                         message:nil
@@ -44,20 +45,33 @@ dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
         self.dismissOnFirstSelection = dismissOnFirstSelection;
         self.okCallback = okCallback;
 
-        CGFloat tableHeight = kDefaultTableCellHeight * MIN(listItems.count, 5.5);
-        CGFloat tableWidth = SDCAlertViewWidth - 2.0 * kStandardHorizontalPadding;
-        UITableView* tableView = [[UITableView alloc] initWithFrame:CGRectMake(kStandardHorizontalPadding, 0.0,
-                                                                               tableWidth, tableHeight)
-                                                              style:UITableViewStylePlain];
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kSelectionCellIdentifier];
-        tableView.layer.borderColor = kDefaultBorderColor.CGColor;
-        tableView.layer.borderWidth = 1.0f;
-        [self.contentView addSubview:tableView];
-        [tableView sdc_centerInSuperview];
+
+        self.tableView = [[UITableView alloc] init];
+        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kSelectionCellIdentifier];
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        self.tableView.layer.borderColor = kDefaultBorderColor.CGColor;
+        self.tableView.layer.borderWidth = 1.0f;
+        self.tableView.alwaysBounceVertical = NO;
+        [self.contentView addSubview:self.tableView];
+        [self.tableView sdc_centerInSuperview];
+        [self notifyContentChanged];
     }
     return self;
+}
+
+
+- (void) notifyContentChanged {
+    [self.tableView reloadData];
+    [self _resizeTable];
+    [super notifyContentChanged];
+}
+
+
+- (void) _resizeTable {
+    CGFloat tableHeight = kDefaultTableCellHeight * MIN(self.listItems.count, 5.5);
+    CGFloat tableWidth = SDCAlertViewWidth - 2.0 * kStandardHorizontalPadding;
+    self.tableView.frame = CGRectMake(kStandardHorizontalPadding, 0.0, tableWidth, tableHeight);
 }
 
 

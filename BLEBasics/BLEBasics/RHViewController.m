@@ -8,7 +8,7 @@
 
 #import "RHViewController.h"
 
-#import "RHListSelectionDialog.h"
+#import "RHBluetoothLEAdapter.h"
 
 @interface RHViewController ()
 
@@ -18,15 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [[[RHListSelectionDialog alloc] initWithTitle:@"Hi Dave"
-                          allowMultipleSelections:NO
-                          dismissOnFirstSelection:YES
-                                        listItems:@[@"Dave", @"Bob", @"Frank"]
-                                       okCallback:^(NSArray *selectedIndexes) {
-                                           NSLog(@"selectedIndexes = %@", selectedIndexes);
-                                       }] show];
-    
+    self.bleAdapter = [[RHBluetoothLEAdapter alloc] initWithConnectionCallback:^(BOOL isConnected) {
+        self.connectionStatusLabel.text = isConnected ? @"Ready!" : @"Not ready";
+    }
+                                                               receiveCallback:^(NSString* commandReceived) {
+                                                                   // TODO: Display the message.
+                                                               }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +31,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pressedSearch:(id)sender {
+    [self.bleAdapter showConnectionDialog];
+}
+
+- (IBAction)pressedSend:(id)sender {
+}
+
+- (IBAction)textFieldEditingDidEnd:(id)sender {
+}
 @end
