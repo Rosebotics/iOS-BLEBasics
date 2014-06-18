@@ -39,12 +39,33 @@
 
 - (void) showConnectionDialog {
     [self.aryDevices removeAllObjects];
-    [self.blunoManager scan];
     self.connectionDialog = [[RHBleConnectionDialog alloc] initWithListItems:self.aryDevices
                                                       deviceSelectedCallback:^(DFBlunoDevice* bleDevice) {
                                                           NSLog(@"bleDevice = %@", bleDevice);
+                                                          if (self.blunoDevice == nil)
+                                                          {
+                                                              self.blunoDevice = bleDevice;
+                                                              [self.blunoManager connectToDevice:self.blunoDevice];
+                                                          }
+                                                          else if ([bleDevice isEqual:self.blunoDevice])
+                                                          {
+                                                              if (!self.blunoDevice.bReadyToWrite)
+                                                              {
+                                                                  [self.blunoManager connectToDevice:self.blunoDevice];
+                                                              }
+                                                          }
+                                                          else
+                                                          {
+                                                              if (self.blunoDevice.bReadyToWrite)
+                                                              {
+                                                                  [self.blunoManager disconnectToDevice:self.blunoDevice];
+                                                                  self.blunoDevice = nil;
+                                                              }
+                                                              [self.blunoManager connectToDevice:bleDevice];
+                                                          }
                                                       }];
     [self.connectionDialog show];
+    [self.blunoManager scan];
 }
 
 

@@ -24,7 +24,8 @@
                       listItems:listItems
                      okCallback:^(NSArray *selectedIndexes) {
                          if (selectedIndexes.count == 1 && deviceSelectedCallback != nil) {
-                             deviceSelectedCallback(selectedIndexes[0]);
+                             int index = [selectedIndexes[0] intValue];
+                             deviceSelectedCallback(self.listItems[index]);
                          }
                      }];
     if (self) {
