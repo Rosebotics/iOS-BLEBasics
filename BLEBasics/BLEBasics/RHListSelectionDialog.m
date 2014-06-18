@@ -9,6 +9,7 @@
 #import "RHListSelectionDialog.h"
 
 #import "UIView+SDCAutoLayout.h"
+#import "DFBlunoDevice.h"
 
 #define kSelectionCellIdentifier @"SelectionCellIdentifier"
 #define kDefaultTableCellHeight 44.0
@@ -106,7 +107,11 @@ dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
 
 - (UITableViewCell*) tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSelectionCellIdentifier];
-    cell.textLabel.text = self.listItems[indexPath.row];
+
+
+    //cell.textLabel.text = self.listItems[indexPath.row];
+    DFBlunoDevice* peripheral   = [self.listItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", peripheral.name, peripheral.identifier];
     if ([self.selectedIndexPaths containsObject:indexPath]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {

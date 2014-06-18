@@ -36,8 +36,12 @@
 }
 
 - (IBAction)pressedSend:(id)sender {
+    NSLog(@"TODO: Implement send for %@", self.commandTextField.text);
+    [self.bleAdapter sendCommand:self.commandTextField.text];
 }
 
 - (IBAction)textFieldEditingDidEnd:(id)sender {
+    NSLog(@"TODO: Implement same send");
 }
+
 @end

@@ -38,6 +38,8 @@
 
 
 - (void) showConnectionDialog {
+    [self.aryDevices removeAllObjects];
+    [self.blunoManager scan];
     self.connectionDialog = [[RHBleConnectionDialog alloc] initWithListItems:self.aryDevices
                                                       deviceSelectedCallback:^(DFBlunoDevice* bleDevice) {
                                                           NSLog(@"bleDevice = %@", bleDevice);

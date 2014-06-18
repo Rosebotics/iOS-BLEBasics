@@ -191,7 +191,6 @@
 		FD5625E9194D3F090090236F /* BLEBasics */ = {
 			isa = PBXGroup;
 			children = (
-				FD56261A194D3F5B0090236F /* 3rd Party Libraries */,
 				FDB5FE4B194D4B0800450BC4 /* BLE Adapter */,
 				FDB5FE63194EA58500450BC4 /* Using BLE Adapter */,
 				FD5625EA194D3F090090236F /* Supporting Files */,
@@ -234,7 +233,6 @@
 		FD56261A194D3F5B0090236F /* 3rd Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				FDB5FE64194EA64D00450BC4 /* joystick-ios */,
 				FDB5FE4C194D4B5400450BC4 /* Bluno */,
 				FD562649194D43100090236F /* SDCAutoLayout */,
 				FD562631194D40A40090236F /* RBBAnimation */,
@@ -297,6 +295,7 @@
 		FDB5FE4B194D4B0800450BC4 /* BLE Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				FD56261A194D3F5B0090236F /* 3rd Party Libraries */,
 				FD56264F194D44710090236F /* RHListSelectionDialog.h */,
 				FD562650194D44710090236F /* RHListSelectionDialog.m */,
 				FDB5FE5D194D4E9800450BC4 /* RHBleConnectionDialog.h */,
@@ -333,6 +332,7 @@
 		FDB5FE63194EA58500450BC4 /* Using BLE Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				FDB5FE6F1951E79600450BC4 /* 3rd Party Libraries */,
 				FD5625F2194D3F090090236F /* RHAppDelegate.h */,
 				FD5625F3194D3F090090236F /* RHAppDelegate.m */,
 				FD5625F5194D3F090090236F /* Main.storyboard */,
@@ -352,6 +352,14 @@
 				FDB5FE66194EA66000450BC4 /* JoyStickView.m */,
 			);
 			name = "joystick-ios";
+			sourceTree = "<group>";
+		};
+		FDB5FE6F1951E79600450BC4 /* 3rd Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FDB5FE64194EA64D00450BC4 /* joystick-ios */,
+			);
+			name = "3rd Party Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
