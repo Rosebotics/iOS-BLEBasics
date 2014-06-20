@@ -43,14 +43,11 @@
                                 <color key="textColor" red="0.76862752440000004" green="0.078431375319999996" blue="0.22745099660000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PWM 150 150" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEu-Jh-mWK" userLabel="Command input">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a command" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEu-Jh-mWK" userLabel="Command input">
                                 <rect key="frame" x="20" y="81" width="194" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="2FT-td-Q0e"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Received commands:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3R-3W-EXM">
                                 <rect key="frame" x="20" y="119" width="167" height="21"/>
@@ -97,6 +94,7 @@
                     <connections>
                         <outlet property="commandTextField" destination="KEu-Jh-mWK" id="zsq-gP-YA9"/>
                         <outlet property="connectionStatusLabel" destination="p55-ZP-eYO" id="k2r-43-7uO"/>
+                        <outlet property="receivedCommands" destination="ipx-M0-Sqx" id="Tjf-So-SlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -111,7 +111,8 @@ dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
 
     //cell.textLabel.text = self.listItems[indexPath.row];
     DFBlunoDevice* peripheral   = [self.listItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", peripheral.name, peripheral.identifier];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", peripheral.name, peripheral.identifier];
+    cell.textLabel.text = peripheral.identifier;
     if ([self.selectedIndexPaths containsObject:indexPath]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {

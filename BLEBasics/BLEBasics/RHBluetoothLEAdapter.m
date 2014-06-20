@@ -41,7 +41,7 @@
     [self.aryDevices removeAllObjects];
     self.connectionDialog = [[RHBleConnectionDialog alloc] initWithListItems:self.aryDevices
                                                       deviceSelectedCallback:^(DFBlunoDevice* bleDevice) {
-                                                          NSLog(@"bleDevice = %@", bleDevice);
+                                                          [self.blunoManager stop];
                                                           if (self.blunoDevice == nil)
                                                           {
                                                               self.blunoDevice = bleDevice;
@@ -71,6 +71,7 @@
 
 - (BOOL) sendCommand:(NSString*) commandString {
     if (!self.blunoDevice.bReadyToWrite) {
+        NSLog(@"Bluno is not ready to write.");
         return NO;
     }
     NSString* strWithTerminator = [NSString stringWithFormat:@"%@\n", commandString];
@@ -91,6 +92,9 @@
 
 -(void) didDiscoverDevice:(DFBlunoDevice*) dev {
     BOOL bRepeat = NO;
+    NSLog(@"Dev identifier = %@", dev.identifier);
+    NSLog(@"Dev name = %@", dev.name);
+    NSLog(@"Dev bReadyToWrite = %d", dev.bReadyToWrite);
     for (DFBlunoDevice* bleDevice in self.aryDevices) {
         if ([bleDevice isEqual:dev]) {
             bRepeat = YES;
@@ -99,9 +103,7 @@
     }
     if (!bRepeat) {
         [self.aryDevices addObject:dev];
-        if ([self.connectionDialog isVisible]) {
-            [self.connectionDialog notifyContentChanged];
-        }
+        [self.connectionDialog notifyContentChanged];
     }
 }
 

@@ -14,9 +14,9 @@
 @property (strong, nonatomic) RHBluetoothLEAdapter* bleAdapter;
 @property (strong, nonatomic) IBOutlet UITextField* commandTextField;
 @property (strong, nonatomic) IBOutlet UILabel* connectionStatusLabel;
+@property (strong, nonatomic) IBOutlet UILabel* receivedCommands;
 
 - (IBAction) pressedSearch:(id) sender;
 - (IBAction) pressedSend:(id) sender;
-- (IBAction) textFieldEditingDidEnd:(id) sender;
 
 @end
