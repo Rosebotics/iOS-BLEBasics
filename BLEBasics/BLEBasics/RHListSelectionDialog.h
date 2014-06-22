@@ -11,8 +11,6 @@
 @interface RHListSelectionDialog : SDCAlertView <SDCAlertViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 - (id) initWithTitle:(NSString*) title
-allowMultipleSelections:(BOOL) allowMultipleSelections
-dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
            listItems:(NSMutableArray*) listItems
           okCallback:(void(^)(NSArray* selectedIndexes)) okCallback;
 

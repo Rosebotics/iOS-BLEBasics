@@ -20,8 +20,6 @@
 @interface RHListSelectionDialog()
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) NSMutableArray* listItems;
-@property (nonatomic) BOOL allowMultipleSelections;
-@property (nonatomic) BOOL dismissOnFirstSelection;
 @property (nonatomic, strong) NSMutableArray* selectedIndexPaths;
 @property (nonatomic, strong) void(^okCallback)(NSArray*);
 @end
@@ -29,8 +27,6 @@
 @implementation RHListSelectionDialog
 
 - (id) initWithTitle:(NSString*) title
-allowMultipleSelections:(BOOL) allowMultipleSelections
-dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
            listItems:(NSMutableArray*) listItems
           okCallback:(void(^)(NSArray* selectedIndexes)) okCallback {
     self = [super initWithTitle:title
@@ -40,10 +36,8 @@ dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
               otherButtonTitles:nil];
     if (self) {
         self.delegate = self;
-        self.allowMultipleSelections = allowMultipleSelections;
         self.listItems = listItems;
         self.selectedIndexPaths = [[NSMutableArray alloc] init];
-        self.dismissOnFirstSelection = dismissOnFirstSelection;
         self.okCallback = okCallback;
 
 
@@ -126,27 +120,16 @@ dismissOnFirstSelection:(BOOL) dismissOnFirstSelection
 
 - (void) tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*) indexPath {
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-    if (self.allowMultipleSelections) {
-        if ([self.selectedIndexPaths containsObject:indexPath]) {
-            selectedCell.accessoryType = UITableViewCellAccessoryNone;
-            [self.selectedIndexPaths removeObject:indexPath];
-        } else {
-            selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
-            [self.selectedIndexPaths addObject:indexPath];
-        }
-    } else {
         if (self.selectedIndexPaths.count > 0) {
             [tableView cellForRowAtIndexPath:self.selectedIndexPaths[0]].accessoryType = UITableViewCellAccessoryNone;
         }
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.selectedIndexPaths removeAllObjects];
         [self.selectedIndexPaths addObject:indexPath];
-    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self notifyContentChanged];
-    if (self.dismissOnFirstSelection) {
         [self dismissWithClickedButtonIndex:self.firstOtherButtonIndex animated:YES];
-    }
+
 }
 
 @end

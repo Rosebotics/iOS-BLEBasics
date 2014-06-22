@@ -19,8 +19,6 @@
 - (id) initWithListItems:(NSMutableArray*) listItems
   deviceSelectedCallback:(void(^)(DFBlunoDevice* bleDevice)) deviceSelectedCallback {
     self = [super initWithTitle:@"Select a device"
-        allowMultipleSelections:NO
-        dismissOnFirstSelection:YES
                       listItems:listItems
                      okCallback:^(NSArray *selectedIndexes) {
                          if (selectedIndexes.count == 1 && deviceSelectedCallback != nil) {

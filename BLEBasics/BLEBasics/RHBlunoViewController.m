@@ -49,9 +49,7 @@
     [self.aryDevices removeAllObjects];
 
     [[[RHListSelectionDialog alloc] initWithTitle:@"Hi Dave"
-                          allowMultipleSelections:NO
-                          dismissOnFirstSelection:YES
-                                        listItems:@[@"Dave", @"Bob", @"Frank"]
+                                        listItems:[@[@"Dave", @"Bob", @"Frank"] mutableCopy]
                                        okCallback:^(NSArray *selectedIndexes) {
                                            NSLog(@"selectedIndexes = %@", selectedIndexes);
                                        }] show];
