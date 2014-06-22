@@ -63,7 +63,7 @@
 
 
 - (void) _resizeTable {
-    CGFloat tableHeight = kDefaultTableCellHeight * MIN(self.listItems.count, 5.5);
+    CGFloat tableHeight = kDefaultTableCellHeight * MIN(MAX(self.listItems.count, 1), 5.5);
     CGFloat tableWidth = SDCAlertViewWidth - 2.0 * kStandardHorizontalPadding;
     self.tableView.frame = CGRectMake(kStandardHorizontalPadding, 0.0, tableWidth, tableHeight);
 }
@@ -84,18 +84,29 @@
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger) tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section {
-    return self.listItems.count;
+    return self.listItems.count == 0 ? 1 : self.listItems.count;
 }
 
 
 - (UITableViewCell*) tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSelectionCellIdentifier];
-    DFBlunoDevice* peripheral   = [self.listItems objectAtIndex:indexPath.row];
-    if (peripheral.name.length > 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", peripheral.name, peripheral.identifier];
+    if (self.listItems.count == 0) {
+        self.title = @"No devices found";
+        cell.textLabel.text = @"Searching...";
+        UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        cell.accessoryView = activityIndicatorView;
+        [((UIActivityIndicatorView*)cell.accessoryView) startAnimating];
     } else {
-        cell.textLabel.text = peripheral.identifier;
+        self.title = @"Select a device";
+        DFBlunoDevice* peripheral   = [self.listItems objectAtIndex:indexPath.row];
+        if (peripheral.name.length > 0) {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@\n%@", peripheral.name, peripheral.identifier];
+        } else {
+            cell.textLabel.text = peripheral.identifier;
+        }
+        cell.accessoryView = nil;
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -103,6 +114,9 @@
 #pragma mark - UITableViewDelegate methods
 
 - (void) tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*) indexPath {
+    if (self.listItems.count == 0) {
+        return;
+    }
     DFBlunoDevice* bleDevice = self.listItems[indexPath.row];
     if (self.deviceSelectedCallback != nil) {
         self.deviceSelectedCallback(bleDevice);

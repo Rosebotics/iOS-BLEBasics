@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField* commandTextField;
 @property (strong, nonatomic) IBOutlet UILabel* connectionStatusLabel;
 @property (strong, nonatomic) IBOutlet UILabel* receivedCommands;
+@property (strong, nonatomic) IBOutlet UIButton* searchDisconnectButton;
 
 - (IBAction) pressedSearch:(id) sender;
 - (IBAction) pressedSend:(id) sender;

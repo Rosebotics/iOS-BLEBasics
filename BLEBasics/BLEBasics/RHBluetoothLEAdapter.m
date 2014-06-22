@@ -75,6 +75,12 @@
 }
 
 
+- (void) disconnect {
+    [self.blunoManager disconnectToDevice:self.blunoDevice];
+    self.blunoDevice = nil;
+}
+
+
 #pragma mark- DFBlunoDelegate
 
 -(void) bleDidUpdateState:(BOOL) bleSupported {
@@ -86,9 +92,8 @@
 
 -(void) didDiscoverDevice:(DFBlunoDevice*) dev {
     BOOL bRepeat = NO;
-    NSLog(@"Dev identifier = %@", dev.identifier);
-    NSLog(@"Dev name = %@", dev.name);
-    NSLog(@"Dev bReadyToWrite = %d", dev.bReadyToWrite);
+    NSLog(@"didDiscoverDevice dev.identifier = %@", dev.identifier);
+    NSLog(@"didDiscoverDevice dev.name = %@", dev.name);
     for (DFBlunoDevice* bleDevice in self.aryDevices) {
         if ([bleDevice isEqual:dev]) {
             bRepeat = YES;

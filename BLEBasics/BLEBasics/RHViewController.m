@@ -23,6 +23,11 @@
     [super viewDidLoad];
     self.bleAdapter = [[RHBluetoothLEAdapter alloc] initWithConnectionCallback:^(BOOL isConnected) {
         self.connectionStatusLabel.text = isConnected ? @"Ready!" : @"Not ready";
+        if (isConnected) {
+            [self.searchDisconnectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
+        } else {
+            [self.searchDisconnectButton setTitle:@"Search" forState:UIControlStateNormal];
+        }
     }
                                                                receiveCallback:^(NSString* commandReceived) {
                                                                    self.receivedCommands.text = commandReceived;
@@ -41,7 +46,13 @@
 
 
 - (IBAction)pressedSearch:(id)sender {
-    [self.bleAdapter showConnectionDialog];
+    UIButton* button = (UIButton*)sender;
+    if ([[button titleForState:UIControlStateNormal] isEqualToString:@"Search"]) {
+        [self.bleAdapter showConnectionDialog];
+    } else {
+        [self.bleAdapter disconnect];
+    }
+
 }
 
 

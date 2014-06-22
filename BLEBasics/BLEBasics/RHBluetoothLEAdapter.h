@@ -17,5 +17,6 @@
                   receiveCallback:(void(^)(NSString* commandReceived)) receiveCallback;
 - (void) showConnectionDialog;
 - (BOOL) sendCommand:(NSString*) commandString;
+- (void) disconnect;
 
 @end

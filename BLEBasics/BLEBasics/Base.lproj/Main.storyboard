@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-Br-m8r" userLabel="Button Search">
-                                <rect key="frame" x="236" y="33" width="64" height="30"/>
+                                <rect key="frame" x="222" y="33" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L30-xx-ng5" userLabel="Button Send">
-                                <rect key="frame" x="236" y="81" width="64" height="30"/>
+                                <rect key="frame" x="222" y="81" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +95,7 @@
                         <outlet property="commandTextField" destination="KEu-Jh-mWK" id="zsq-gP-YA9"/>
                         <outlet property="connectionStatusLabel" destination="p55-ZP-eYO" id="k2r-43-7uO"/>
                         <outlet property="receivedCommands" destination="ipx-M0-Sqx" id="Tjf-So-SlS"/>
+                        <outlet property="searchDisconnectButton" destination="qCS-Br-m8r" id="t35-ED-wnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
