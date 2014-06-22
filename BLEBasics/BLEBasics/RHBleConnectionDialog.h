@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 Rose-Hulman. All rights reserved.
 //
 
-#import "RHListSelectionDialog.h"
+#import "SDCAlertView.h"
 @class DFBlunoDevice;
 
-@interface RHBleConnectionDialog : RHListSelectionDialog
+
+@interface RHBleConnectionDialog : SDCAlertView <SDCAlertViewDelegate, UITableViewDataSource, UITableViewDelegate>
 - (id) initWithListItems:(NSMutableArray*) listItems
-          deviceSelectedCallback:(void(^)(DFBlunoDevice* bleDevice)) deviceSelectedCallback;
+  deviceSelectedCallback:(void(^)(DFBlunoDevice* bleDevice)) deviceSelectedCallback
+          cancelCallback:(void(^)()) cancelCallback;
 @end

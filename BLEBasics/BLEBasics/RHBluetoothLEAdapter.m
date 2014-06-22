@@ -42,28 +42,22 @@
     self.connectionDialog = [[RHBleConnectionDialog alloc] initWithListItems:self.aryDevices
                                                       deviceSelectedCallback:^(DFBlunoDevice* bleDevice) {
                                                           [self.blunoManager stop];
-                                                          if (self.blunoDevice == nil)
-                                                          {
+                                                          if (self.blunoDevice == nil) {
                                                               self.blunoDevice = bleDevice;
                                                               [self.blunoManager connectToDevice:self.blunoDevice];
-                                                          }
-                                                          else if ([bleDevice isEqual:self.blunoDevice])
-                                                          {
-                                                              if (!self.blunoDevice.bReadyToWrite)
-                                                              {
+                                                          } else if ([bleDevice isEqual:self.blunoDevice]) {
+                                                              if (!self.blunoDevice.bReadyToWrite) {
                                                                   [self.blunoManager connectToDevice:self.blunoDevice];
                                                               }
-                                                          }
-                                                          else
-                                                          {
-                                                              if (self.blunoDevice.bReadyToWrite)
-                                                              {
+                                                          } else {
+                                                              if (self.blunoDevice.bReadyToWrite) {
                                                                   [self.blunoManager disconnectToDevice:self.blunoDevice];
                                                                   self.blunoDevice = nil;
                                                               }
                                                               [self.blunoManager connectToDevice:bleDevice];
                                                           }
-                                                      }];
+                                                      }
+                             cancelCallback:^{ [self.blunoManager stop]; }];
     [self.connectionDialog show];
     [self.blunoManager scan];
 }

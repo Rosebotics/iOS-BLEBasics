@@ -37,12 +37,10 @@
 		FD562648194D41790090236F /* NSValue+PlatformIndependence.m in Sources */ = {isa = PBXBuildFile; fileRef = FD562646194D41790090236F /* NSValue+PlatformIndependence.m */; };
 		FD56264D194D43210090236F /* SDCAutoLayoutLICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FD56264A194D43210090236F /* SDCAutoLayoutLICENSE */; };
 		FD56264E194D43210090236F /* UIView+SDCAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56264C194D43210090236F /* UIView+SDCAutoLayout.m */; };
-		FD562651194D44710090236F /* RHListSelectionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FD562650194D44710090236F /* RHListSelectionDialog.m */; };
 		FDB5FE52194D4B6E00450BC4 /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE4F194D4B6E00450BC4 /* BLEDevice.m */; };
 		FDB5FE53194D4B6E00450BC4 /* BLEUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE51194D4B6E00450BC4 /* BLEUtility.m */; };
 		FDB5FE58194D4B7C00450BC4 /* DFBlunoDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE55194D4B7C00450BC4 /* DFBlunoDevice.m */; };
 		FDB5FE59194D4B7C00450BC4 /* DFBlunoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE57194D4B7C00450BC4 /* DFBlunoManager.m */; };
-		FDB5FE5C194D4C1600450BC4 /* RHBlunoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE5B194D4C1600450BC4 /* RHBlunoViewController.m */; };
 		FDB5FE5F194D4E9800450BC4 /* RHBleConnectionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE5E194D4E9800450BC4 /* RHBleConnectionDialog.m */; };
 		FDB5FE62194E8B7000450BC4 /* RHBluetoothLEAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE61194E8B7000450BC4 /* RHBluetoothLEAdapter.m */; };
 		FDB5FE67194EA66000450BC4 /* JoyStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB5FE66194EA66000450BC4 /* JoyStickView.m */; };
@@ -111,8 +109,6 @@
 		FD56264A194D43210090236F /* SDCAutoLayoutLICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SDCAutoLayoutLICENSE; sourceTree = "<group>"; };
 		FD56264B194D43210090236F /* UIView+SDCAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDCAutoLayout.h"; sourceTree = "<group>"; };
 		FD56264C194D43210090236F /* UIView+SDCAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDCAutoLayout.m"; sourceTree = "<group>"; };
-		FD56264F194D44710090236F /* RHListSelectionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHListSelectionDialog.h; sourceTree = "<group>"; };
-		FD562650194D44710090236F /* RHListSelectionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHListSelectionDialog.m; sourceTree = "<group>"; };
 		FDB5FE4E194D4B6E00450BC4 /* BLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevice.h; sourceTree = "<group>"; };
 		FDB5FE4F194D4B6E00450BC4 /* BLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevice.m; sourceTree = "<group>"; };
 		FDB5FE50194D4B6E00450BC4 /* BLEUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEUtility.h; sourceTree = "<group>"; };
@@ -121,8 +117,6 @@
 		FDB5FE55194D4B7C00450BC4 /* DFBlunoDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoDevice.m; sourceTree = "<group>"; };
 		FDB5FE56194D4B7C00450BC4 /* DFBlunoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoManager.h; sourceTree = "<group>"; };
 		FDB5FE57194D4B7C00450BC4 /* DFBlunoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoManager.m; sourceTree = "<group>"; };
-		FDB5FE5A194D4C1600450BC4 /* RHBlunoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBlunoViewController.h; sourceTree = "<group>"; };
-		FDB5FE5B194D4C1600450BC4 /* RHBlunoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHBlunoViewController.m; sourceTree = "<group>"; };
 		FDB5FE5D194D4E9800450BC4 /* RHBleConnectionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBleConnectionDialog.h; sourceTree = "<group>"; };
 		FDB5FE5E194D4E9800450BC4 /* RHBleConnectionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHBleConnectionDialog.m; sourceTree = "<group>"; };
 		FDB5FE60194E8B7000450BC4 /* RHBluetoothLEAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBluetoothLEAdapter.h; sourceTree = "<group>"; };
@@ -194,8 +188,6 @@
 				FDB5FE4B194D4B0800450BC4 /* BLE Adapter */,
 				FDB5FE63194EA58500450BC4 /* Using BLE Adapter */,
 				FD5625EA194D3F090090236F /* Supporting Files */,
-				FDB5FE5A194D4C1600450BC4 /* RHBlunoViewController.h */,
-				FDB5FE5B194D4C1600450BC4 /* RHBlunoViewController.m */,
 				FD5625FB194D3F090090236F /* Images.xcassets */,
 			);
 			path = BLEBasics;
@@ -296,8 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				FD56261A194D3F5B0090236F /* 3rd Party Libraries */,
-				FD56264F194D44710090236F /* RHListSelectionDialog.h */,
-				FD562650194D44710090236F /* RHListSelectionDialog.m */,
 				FDB5FE5D194D4E9800450BC4 /* RHBleConnectionDialog.h */,
 				FDB5FE5E194D4E9800450BC4 /* RHBleConnectionDialog.m */,
 				FDB5FE60194E8B7000450BC4 /* RHBluetoothLEAdapter.h */,
@@ -473,7 +463,6 @@
 				FD56262C194D3FC70090236F /* SDCAlertViewController.m in Sources */,
 				FDB5FE67194EA66000450BC4 /* JoyStickView.m in Sources */,
 				FDB5FE59194D4B7C00450BC4 /* DFBlunoManager.m in Sources */,
-				FDB5FE5C194D4C1600450BC4 /* RHBlunoViewController.m in Sources */,
 				FDB5FE58194D4B7C00450BC4 /* DFBlunoDevice.m in Sources */,
 				FD56263A194D41340090236F /* RBBAnimation.m in Sources */,
 				FD56263C194D41340090236F /* RBBLinearInterpolation.m in Sources */,
@@ -487,7 +476,6 @@
 				FD56262D194D3FC70090236F /* SDCAlertViewCoordinator.m in Sources */,
 				FD562629194D3FC70090236F /* SDCAlertView.m in Sources */,
 				FDB5FE62194E8B7000450BC4 /* RHBluetoothLEAdapter.m in Sources */,
-				FD562651194D44710090236F /* RHListSelectionDialog.m in Sources */,
 				FD5625FA194D3F090090236F /* RHViewController.m in Sources */,
 				FD562642194D41670090236F /* UIColor+PlatformIndependence.m in Sources */,
 				FD56263B194D41340090236F /* RBBBlockBasedArray.m in Sources */,
